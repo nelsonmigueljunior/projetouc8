@@ -4,17 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Produtos {
+@Table(name = "produtos")
+public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Integer id;
+
 	private String produto;
-	private Double quantidade;
-	private Double precoCompra;
-	private Double precoVenda;
+
+	private int quantidade;
+
+	private double precoCompra;
+
+	private double precoVenda;
+
 	private String fornecedor;
 
 	public Integer getId() {
@@ -33,27 +40,27 @@ public class Produtos {
 		this.produto = produto;
 	}
 
-	public Double getQuantidade() {
+	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(Double quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
-	public Double getPrecoCompra() {
+	public double getPrecoCompra() {
 		return precoCompra;
 	}
 
-	public void setPrecoCompra(Double precoCompra) {
+	public void setPrecoCompra(double precoCompra) {
 		this.precoCompra = precoCompra;
 	}
 
-	public Double getPrecoVenda() {
+	public double getPrecoVenda() {
 		return precoVenda;
 	}
 
-	public void setPrecoVenda(Double precoVenda) {
+	public void setPrecoVenda(double precoVenda) {
 		this.precoVenda = precoVenda;
 	}
 
@@ -64,5 +71,6 @@ public class Produtos {
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
 	}
+
 
 }
