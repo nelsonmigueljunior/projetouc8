@@ -18,4 +18,21 @@ public class ProdutoServicoCRUD implements ProdutoServico {
 		return (List<Produto>) repository.findAll();
 	}
 
+	public void apagarProduto(Integer id) {
+		repository.deleteById(id);
+	
+	}
+	public Produto salvarProduto(Produto produto) {
+		return repository.save(produto);
+	}
+	
+	public Produto consultarProdutoId(Integer id) {
+		return repository.findById(id).get();
+	}
+	
+	public Produto atualizarProduto(Produto produto) {
+		return repository.save(produto);
+	}
+
+	
 }
